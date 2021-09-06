@@ -1,31 +1,22 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {render, RenderResult} from "@testing-library/angular";
 
 describe('AppComponent', () => {
+  let renderResult:RenderResult<AppComponent>;
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
+    renderResult = await render(AppComponent);
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(renderResult.fixture.componentInstance).toBeTruthy();
   });
 
   it(`should have as title 'angular-starter'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-starter');
+    expect(renderResult.fixture.componentInstance.title).toEqual('angular-starter');
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-starter app is running!');
+    expect(renderResult.getByText('angular-starter app is running!'));
   });
 });
