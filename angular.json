@@ -115,41 +115,11 @@
             ]
           }
         },
-        "cypress-run": {
-          "builder": "@briebug/cypress-schematic:cypress",
-          "options": {
-            "devServerTarget": "angular-starter:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "angular-starter:serve:production"
-            }
-          }
-        },
-        "cypress-open": {
-          "builder": "@briebug/cypress-schematic:cypress",
-          "options": {
-            "devServerTarget": "angular-starter:serve",
-            "watch": true,
-            "headless": false
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "angular-starter:serve:production"
-            }
-          }
-        },
         "e2e": {
-          "builder": "@briebug/cypress-schematic:cypress",
+          "builder": "@nrwl/cypress:cypress",
           "options": {
-            "devServerTarget": "angular-starter:serve",
-            "watch": true,
-            "headless": false
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "angular-starter:serve:production"
-            }
+            "cypressConfig": "tests/e2e/cypress.json",
+            "tsConfig": "tests/e2e/tsconfig.e2e.json"
           }
         }
       }

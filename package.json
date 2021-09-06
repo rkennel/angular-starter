@@ -7,6 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "e2e": "ng e2e --watch",
+    "e2e-ci": "ng e2e",
     "lint": "ng lint"
   },
   "private": true,
@@ -33,6 +35,8 @@
     "@angular-eslint/template-parser": "12.3.1",
     "@angular/cli": "~12.2.4",
     "@angular/compiler-cli": "~12.2.0",
+    "@nrwl/cypress": "^12.8.0",
+    "@nrwl/workspace": "^12.8.0",
     "@testing-library/angular": "^10.11.0",
     "@types/jest": "27.0.1",
     "@types/node": "^12.11.1",
