@@ -1,0 +1,9 @@
+{
+  "integrationFolder": "integration",
+  "supportFile": "support/index.ts",
+  "videosFolder": "videos",
+  "screenshotsFolder": "screenshots",
+  "pluginsFile": "plugins/index.js",
+  "fixturesFolder": "fixtures",
+  "baseUrl": "http://localhost:4200"
+}
